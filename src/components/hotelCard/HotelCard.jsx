@@ -21,6 +21,7 @@ import {Image} from 'react-native';
 import COLORS from '../../consts/Color';
 import Favorite from '../../img/homeImg/favorite.svg';
 import Star from '../../img/homeImg/star.svg';
+import HeartIcon from '../../img/homeImg/IconHeart.svg'
 import {useNavigation} from '@react-navigation/native';
 import {
   widthPixel,
@@ -32,7 +33,7 @@ import {
 
 const {width} = Dimensions.get('window');
 const cardWidth = width / 1.4;
-const Card = ({hotel, index}) => {
+const Card = ({hotel, index,showItems,setShowItems,handleSlideIconPress}) => {
   const navigation = useNavigation();
   return (
     <TouchableOpacity
@@ -43,10 +44,12 @@ const Card = ({hotel, index}) => {
       }}
       >
       <View style={styles.priceTag}>
-        <Favorite />
+       {showItems? <HeartIcon/> :<Favorite />
+       } 
       </View>
       <View>
         <Image source={hotel.image} style={styles.mainimg} />
+        
       </View>
       <View style={styles.cardDetails}>
         <View style={styles.maincard}>

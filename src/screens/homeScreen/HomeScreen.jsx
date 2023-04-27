@@ -24,9 +24,13 @@ import {
   pixelSizeVertical,
   pixelSizeHorizontal,
 } from '../../utils/ResponsiveStyle.js';
-
+import { useState } from 'react';
 const {height} = Dimensions.get('window');
 function HomeScreen() {
+  const [showItems, setShowItems] = useState(false);
+  const handleSlideIconPress = () => {
+    setShowItems(!showItems);
+  };
   return (
     <>
       <View style={{flex: 0}}>
@@ -42,7 +46,7 @@ function HomeScreen() {
           <Notifi />
         </View>
         <View style={styles.container1}>
-          <InputIcon />
+          <InputIcon showItems={showItems} setShowItems={setShowItems}  handleSlideIconPress={handleSlideIconPress} />
         </View>
       </View>
         {/* Cards Item Landing form Cards components */}
@@ -65,7 +69,7 @@ function HomeScreen() {
               }}
               showsHorizontalScrollIndicator={false}
               renderItem={({item, index}) => (
-                <HotelCard hotel={item} index={index} />
+                <HotelCard hotel={item} index={index} showItems={showItems} setShowItems={setShowItems}  handleSlideIconPress={handleSlideIconPress}/>
               )}
             />
           </View>
@@ -123,17 +127,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: pixelSizeHorizontal(16),
     paddingVertical: pixelSizeVertical(24),
   },
-  // Bottom: {
-  //   flex: 1,
-  //   flexDirection: 'row',
-  //   marginHorizontal: pixelSizeHorizontal(24),
-  //   paddingVertical: pixelSizeVertical(16),
-  //   backgroundColor: 'white',
-  //   borderRadius: 12,
-  //   elevation: 5,
-  //   shadowColor: '#000',
-  //   gap: 10,
-  // },
+
   Nearby: {
     flexDirection: 'row',
     justifyContent: 'space-between',

@@ -14,7 +14,7 @@ import Back from '../../img/homeImg/Back.svg';
 import Menu from '../../img/homeImg/Menu.svg';
 import Location from '../../img/homeImg/location.svg';
 import DetailsButton from '../../components/detailsButton/DetailsButton';
-import Indicator from '../../img/homeImg/Indicator.svg';
+import Heart from '../../img/homeImg/favorite.svg'
 import {
   widthPixel,
   heightPixel,
@@ -22,8 +22,9 @@ import {
   pixelSizeVertical,
   pixelSizeHorizontal,
 } from '../../utils/ResponsiveStyle.js';
+import { Positions } from 'react-native-calendars/src/expandableCalendar';
 
-const DetailsScreen = ({navigation, route}) => {
+const DetailsScreen = ({navigation, route,hotel}) => {
   const items = route.params;
   // console.log('items', items);
   // const navigation = useNavigation();
@@ -51,6 +52,8 @@ const DetailsScreen = ({navigation, route}) => {
             <Menu width={widthPixel(40)} height={heightPixel(40)} />
           </View>
           <View>
+          <Heart style={{position:'absolute',right:13,top:'12%',zIndex:10}}/>
+
             <ImageBackground
               style={styles.headerImage}
               source={items.hotel.image}></ImageBackground>
@@ -106,6 +109,7 @@ const DetailsScreen = ({navigation, route}) => {
                 source={require('../../img/homeImg/preview1.png')}
                 style={{width: widthPixel(98), height: heightPixel(82)}}
               />
+
               <Image
                 source={require('../../img/homeImg/preview2.png')}
                 style={{width: widthPixel(98), height: heightPixel(82)}}
@@ -116,7 +120,10 @@ const DetailsScreen = ({navigation, route}) => {
               />
             </View>
           </View>
-          
+          <View style={{backgroundColor:'red'}}> 
+
+          {/* <Image source={require('../../img/homeImg/favorite.svg')} width={50} height={50} /> */}
+          </View>
 
           <View style={styles.btn}>
             <TouchableOpacity

@@ -19,9 +19,9 @@ import {widthPixel,
   fontPixel,
   pixelSizeVertical,
   pixelSizeHorizontal,} from '../../utils/ResponsiveStyle.js'
-const SearchButton = ({navigation}) => {
+const SearchButton = ({navigation, setShowItems }) => {
 //   const navigation = useNavigation();
-  const [input, setInput] = useState(true);
+  // const [input, setInput] = useState(true);
 //   function hello() {
 //     setshowInput(!showInput);
 //   }
@@ -52,7 +52,7 @@ const SearchButton = ({navigation}) => {
           <Button title="hello" />{' '}
         </View>
       )} */}
-      {input?
+      {/* {input? */}
        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
           <Pressable style={styles.PressableHouse}>
             <House width={widthPixel(20)} height={heightPixel(20)}/>
@@ -61,17 +61,18 @@ const SearchButton = ({navigation}) => {
 
           <Pressable style={styles.PressableShop}>
             <Shop width={widthPixel(20)} height={heightPixel(20)}/>
-            <Pressable onPress={()=>setInput(false)} style={{paddingLeft: pixelSizeHorizontal(8), color: '#878787',fontSize:fontPixel(14)}} >
+            <Pressable onPress={()=>setShowItems(false)} style={{paddingLeft: pixelSizeHorizontal(8), color: '#878787',fontSize:fontPixel(14)}} >
               <Text> Market</Text> 
             </Pressable>
           </Pressable>
           <Pressable style={styles.PressableCoffee}>
             <Coffee width={widthPixel(20)} height={heightPixel(20)}/>
-            <Pressable onPress={()=>setInput(false)} style={{paddingLeft: pixelSizeHorizontal(8), color: '#878787',fontSize:fontPixel(14)}}>
+            <Pressable onPress={()=>setShowItems(false)} style={{paddingLeft: pixelSizeHorizontal(8), color: '#878787',fontSize:fontPixel(14)}}>
               <Text>Coffee</Text>
               </Pressable>
           </Pressable>
-        </View>:<InputIcon/>}
+        </View>
+        {/* :<InputIcon/>} */}
     </>
   );
 };

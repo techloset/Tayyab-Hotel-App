@@ -3,10 +3,7 @@ import {
   TextInput,
   StyleSheet,
   View,
-  Button,
-  Alert,
-  Text,
-  Pressable,
+
 } from 'react-native';
 import Search from '../../img/homeImg/search-normal.svg';
 import COLORS from '../../consts/Color';
@@ -19,24 +16,10 @@ import {widthPixel,
   pixelSizeVertical,
   pixelSizeHorizontal,} from '../../utils/ResponsiveStyle.js'
 
-export const InputIcon = ({ }) => {
-  const [showItems, setShowItems] = useState(false);
+export const InputIcon = ({showItems,setShowItems,handleSlideIconPress }) => {
 
   const navigation = useNavigation();
-  useEffect(()=>{
-    // console.log('fsf')
-    // handleSlideIconPress();
-    return()=>{
 
-      navigation.navigate('HomeVersionTabs');
-    }
-  },[showItems])
-  const handleSlideIconPress = () => {
-    setShowItems(!showItems);
-  };
-  
- 
-  // setShowItems(showItems)
   return (
     <>
       {!showItems ? (
@@ -47,7 +30,7 @@ export const InputIcon = ({ }) => {
         </View>
       ) : (
         <View>
-          <SearchButton />
+          <SearchButton  setShowItems={setShowItems}   />
         </View>
       )}
     </>
