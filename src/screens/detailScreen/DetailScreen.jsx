@@ -24,25 +24,13 @@ import {
 } from '../../utils/ResponsiveStyle.js';
 import { Positions } from 'react-native-calendars/src/expandableCalendar';
 
-const DetailsScreen = ({navigation, route,hotel}) => {
+const DetailsScreen = ({navigation, route}) => {
   const items = route.params;
   // console.log('items', items);
   // const navigation = useNavigation();
   return (
     <>
-      
-        {/* <StatusBar
-        barStyle="light-content"
-        translucent
-        backgroundColor="rgba(0,0,0,0)"
-      /> */}
-        <View
-          style={{
-            flex: 0.68,
-            // backgroundColor: 'red',
-            marginHorizontal: pixelSizeHorizontal(24),
-          }}>
-          <View style={styles.header}>
+      <View style={styles.header}>
             <Back
               onPress={navigation.goBack}
               width={widthPixel(40)}
@@ -51,6 +39,17 @@ const DetailsScreen = ({navigation, route,hotel}) => {
             <Text style={styles.Toptext}>Detail</Text>
             <Menu width={widthPixel(40)} height={heightPixel(40)} />
           </View>
+        <StatusBar
+        translucent
+        backgroundColor={'transparent'}
+        barStyle={'dark-content'}
+      />
+        <View
+          style={{
+            flex: 0.67,
+            marginHorizontal: pixelSizeHorizontal(24),
+          }}>
+          
           <View>
           <Heart style={{position:'absolute',right:13,top:'12%',zIndex:10}}/>
 
@@ -169,7 +168,8 @@ const styles = StyleSheet.create({
     borderRadius: 8,
   },
   header: {
-    marginTop: pixelSizeVertical(20),
+    marginTop: pixelSizeVertical(40),
+    marginHorizontal: pixelSizeHorizontal(24),
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',

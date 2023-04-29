@@ -63,7 +63,7 @@ const Card = ({hotel, index,showItems,setShowItems,handleSlideIconPress}) => {
         <Text style={styles.hotellocation}>{hotel.location}</Text>
         <View style={styles.mainprice}>
           <Text style={styles.cardprice}>${hotel.price}</Text>
-          <Text style={{fontSize:fontPixel(14)}}> /night</Text>
+          <Text style={{fontSize:fontPixel(14),color: COLORS.grey,}}> /night</Text>
         </View>
       </View>
     </TouchableOpacity>
@@ -129,7 +129,7 @@ const styles = StyleSheet.create({
     fontSize: fontPixel(14),
     fontFamily: 'PlusJakartaSans-Bold',
   },
-  starwala: {flexDirection: 'row', alignItems: 'center'},
+  starwala: {flexDirection: 'row', alignItems: 'center',gap:9},
 });
 
 export default Card;

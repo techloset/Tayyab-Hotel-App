@@ -8,6 +8,7 @@ import {
   FlatList,
   ScrollView,
   Dimensions,
+  StatusBar,
 } from 'react-native';
 import COLORS from '../../consts/Color';
 import hotels from '../../consts/Hotel';
@@ -25,14 +26,19 @@ import {
   pixelSizeHorizontal,
 } from '../../utils/ResponsiveStyle.js';
 import { useState } from 'react';
-const {height} = Dimensions.get('window');
-function HomeScreen() {
+// const {height} = Dimensions.get('window');
+export default  HomeScreen=()=> {
   const [showItems, setShowItems] = useState(false);
   const handleSlideIconPress = () => {
     setShowItems(!showItems);
   };
   return (
     <>
+    <StatusBar  translucent
+        backgroundColor={'transparent'}
+        barStyle={'dark-content'}/>
+        <View style={{flex:1}}>
+
       <View style={{flex: 0}}>
         <View style={styles.header}>
           <View style={styles.headLocation}>
@@ -45,16 +51,21 @@ function HomeScreen() {
           </View>
           <Notifi />
         </View>
-        <View style={styles.container1}>
+        <View style={{paddingHorizontal: pixelSizeHorizontal(24),
+    // paddingVertical: pixelSizeVertical(24),
+    paddingTop:showItems? 32:24,
+    paddingBottom:showItems? 32:24}}>
           <InputIcon showItems={showItems} setShowItems={setShowItems}  handleSlideIconPress={handleSlideIconPress} />
         </View>
       </View>
+      <ScrollView>
+
         {/* Cards Item Landing form Cards components */}
         {/* <View> */}
         {/* </View> */}
       <View style={{flex: 1}}>
-        <ScrollView>
-          <View style={{flex: 0}}>
+     
+          <View style={{}}>
             <View style={styles.Nearby}>
               <Text style={styles.NearbyLocation}>Nearby your location</Text>
               <Text style={styles.see}>See all</Text>
@@ -73,34 +84,39 @@ function HomeScreen() {
               )}
             />
           </View>
-          <View style={{flex: 0, justifyContent: 'flex-end'}}>
-            {/* Popular Destination Cards */}
+        
+    
+      </View>
+        <View style={{flex: 0, justifyContent: 'flex-start'}}>
             <Destination />
           </View>
-        </ScrollView>
-      </View>
-    </>
-  );
-}
-export default function Home() {
-  return (
-    <>
-      {height >= 670 ? (
-        <View style={{flex: 1}}>
-          <HomeScreen />
+      </ScrollView>
+
         </View>
-      ) : (
-        <ScrollView>
-          <HomeScreen />
-        </ScrollView>
-      )}
+            {/* Popular Destination Cards */}
+
     </>
   );
 }
+// export default function Home() {
+//   return (
+//     <>
+       
+//         {/* <View style={{flex: 1}}>
+//           <HomeScreen />
+//         </View> */}
+     
+//         <ScrollView>
+//           <HomeScreen />
+//         </ScrollView>
+      
+//     </>
+//   );
+// }
 
 const styles = StyleSheet.create({
   header: {
-    marginTop: pixelSizeVertical(29),
+    marginTop: pixelSizeVertical(60),
     flexDirection: 'row',
     justifyContent: 'space-between',
     paddingHorizontal: pixelSizeHorizontal(20),
@@ -124,8 +140,11 @@ const styles = StyleSheet.create({
   },
 
   container1: {
-    paddingHorizontal: pixelSizeHorizontal(16),
-    paddingVertical: pixelSizeVertical(24),
+    paddingHorizontal: pixelSizeHorizontal(24),
+    // paddingVertical: pixelSizeVertical(24),
+    paddingTop:32,
+    paddingBottom:24
+    
   },
 
   Nearby: {

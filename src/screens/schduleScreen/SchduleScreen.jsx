@@ -32,26 +32,31 @@ import DetailsButton from '../../components/detailsButton/DetailsButton';
 import Indicator from '../../img/homeImg/Indicator.svg';
 import {Calendar} from 'react-native-calendars';
 import Schedule from '../../components/mySchdule/MySchdule'
+import { useState } from 'react';
 import { fontPixel, heightPixel, pixelSizeHorizontal, pixelSizeVertical, widthPixel } from '../../utils/ResponsiveStyle';
 
 const SchduleScreen = ({navigation, route}) => {
   const items = route.params;
 
+  const [selected, setSelected] = useState('2023-04-19');
+
   return (
+    <>
+    <View style={styles.header}>
+        <Back onPress={navigation.goBack} width={widthPixel(40)} height={heightPixel(40)}/>
+        <Text style={styles.Toptext}>Schedule</Text>
+        <Setting width={widthPixel(40)} height={heightPixel(40)}/>
+      </View>
     <ScrollView
       showsVerticalScrollIndicator={false}
       contentContainerStyle={{
-        paddingBottom: pixelSizeVertical(20),
+        // paddingBottom: pixelSizeVertical(20),
       }}>
       <StatusBar
         translucent
         backgroundColor="rgba(0,0,0,0)"
       />
-      <View style={styles.header}>
-        <Back onPress={navigation.goBack} width={widthPixel(40)} height={heightPixel(40)}/>
-        <Text style={styles.Toptext}>Schedule</Text>
-        <Setting width={widthPixel(40)} height={heightPixel(40)}/>
-      </View>
+      
       <View style={{marginHorizontal: pixelSizeHorizontal(24),marginTop:pixelSizeVertical(44)}}>
         <Calendar 
         theme={{
@@ -59,13 +64,13 @@ const SchduleScreen = ({navigation, route}) => {
           calendarBackground: '#F5F5FF',
           textSectionTitleColor: '#101010',
           textSectionTitleDisabledColor: '#A7AFB2',
-          selectedDayBackgroundColor: '#101010',
+          // selectedDayBackgroundColor: '#101010',
           selectedDayTextColor: '#ffffff',
           todayTextColor: 'white',
           dayTextColor: '#101010',
           textDisabledColor: '#A7AFB2',
           dotColor: '#00adf5',
-          selectedDotColor: '#ffffff',
+          selectedDotColor: 'red',
           arrowColor: '#4C4DDC',
           disabledArrowColor: '#A7AFB2',
           monthTextColor: '#101010',
@@ -83,20 +88,29 @@ const SchduleScreen = ({navigation, route}) => {
         style={{borderRadius:8}}
          markingType='custom'
          markedDates={{
-          '2023-04-10':{customStyles:{container:{backgroundColor:COLORS.lightBlue}},textStyle: {
-            color: COLORS.white, 
-            // Set the desired text color here
-          },}
+           [selected]:{selected: true, selectedColor: 'red',customStyles:{container:{backgroundColor:COLORS.lightBlue}}}
+           
+          //  ,
+          // [selected]: {selected: true, disableTouchEvent: true,}
          }}
+         
+         onDayPress={day => {
+           setSelected(day.dateString);
+           console.log(day);
+          }}
+          // markedDates={{
+            
+          // }}
 
-        
-        />
+          
+          />
       </View>
 
 <Schedule/>
 
      
     </ScrollView>
+</>
   );
 };
 

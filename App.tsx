@@ -57,11 +57,11 @@ const HomeTabs = () => {
           }}
         />
         <Tab.Screen
-          name="Detail"
-          component={DetailScreen}
+          name="Detailjkj"
+          component={AccountScreen}
           options={{
             // tabBarItemStyle:{display:'none'},
-            tabBarStyle: {display: 'none'},
+            // tabBarStyle: {display: 'none'},
             tabBarLabel: '',
 
             tabBarIcon: ({color, size}) => <BookMark />,

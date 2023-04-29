@@ -61,14 +61,14 @@ const SearchButton = ({navigation, setShowItems }) => {
 
           <Pressable style={styles.PressableShop}>
             <Shop width={widthPixel(20)} height={heightPixel(20)}/>
-            <Pressable onPress={()=>setShowItems(false)} style={{paddingLeft: pixelSizeHorizontal(8), color: '#878787',fontSize:fontPixel(14)}} >
-              <Text> Market</Text> 
+            <Pressable onPress={()=>setShowItems(false)} style={{paddingLeft: pixelSizeHorizontal(8)}} >
+              <Text style={{fontSize:fontPixel(14),color: COLORS.grey,}}> Market</Text> 
             </Pressable>
           </Pressable>
           <Pressable style={styles.PressableCoffee}>
             <Coffee width={widthPixel(20)} height={heightPixel(20)}/>
-            <Pressable onPress={()=>setShowItems(false)} style={{paddingLeft: pixelSizeHorizontal(8), color: '#878787',fontSize:fontPixel(14)}}>
-              <Text>Coffee</Text>
+            <Pressable onPress={()=>setShowItems(false)} style={{paddingLeft: pixelSizeHorizontal(8)}}>
+              <Text style={{fontSize:fontPixel(14),color: COLORS.grey,}}>Coffee</Text>
               </Pressable>
           </Pressable>
         </View>
