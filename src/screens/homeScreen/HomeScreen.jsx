@@ -52,8 +52,8 @@ export default  HomeScreen=()=> {
           </View>
           <View style={{ borderColor: COLORS.borderGrey,alignItems:'center',
     borderWidth: 1,
-    borderRadius: 8,paddingVertical:pixelSizeVertical(10),paddingHorizontal:pixelSizeHorizontal(10)}}>
-          <Noti/>
+    borderRadius: 8,paddingVertical:pixelSizeVertical(8),paddingHorizontal:pixelSizeHorizontal(8)}}>
+          <Noti width={widthPixel(24)} height={heightPixel(24)}/>
 
           </View>
         </View>
