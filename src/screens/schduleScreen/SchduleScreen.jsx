@@ -25,17 +25,33 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import COLORS from '../../consts/Color';
-import Back from '../../img/homeImg/Back.svg';
-import Setting from '../../img/homeImg/Setting.svg';
+import Back from '../../img/homeImg/Iconlying.svg';
+import Setting from '../../img/homeImg/setting-2.svg';
 import Location from '../../img/homeImg/location.svg';
 import DetailsButton from '../../components/detailsButton/DetailsButton';
 import Indicator from '../../img/homeImg/Indicator.svg';
 import {Calendar} from 'react-native-calendars';
 import Schedule from '../../components/mySchdule/MySchdule'
 import { useState } from 'react';
+import RightVector from '../../img/homeImg/Vector.svg'
+import LeftVector from '../../img/homeImg/Vector1.svg'
 import { fontPixel, heightPixel, pixelSizeHorizontal, pixelSizeVertical, widthPixel } from '../../utils/ResponsiveStyle';
 
+
+
+
 const SchduleScreen = ({navigation, route}) => {
+
+  const renderCustomArrow = (direction, onPress) => {
+    const imageSource = direction === 'left' ? <LeftVector/> : <RightVector/>;
+    return (
+      <TouchableOpacity onPress={onPress}>
+        <Image source={imageSource} style={{ width: 20, height: 20 }} />
+      </TouchableOpacity>
+    );
+  };
+  
+  
   const items = route.params;
 
   const [selected, setSelected] = useState('2023-04-19');
@@ -43,14 +59,27 @@ const SchduleScreen = ({navigation, route}) => {
   return (
     <>
     <View style={styles.header}>
-        <Back onPress={navigation.goBack} width={widthPixel(40)} height={heightPixel(40)}/>
+        <View  style={{ borderColor: COLORS.borderGrey,alignItems:'center', 
+    borderWidth: 1,
+    borderRadius: 8,paddingVertical:pixelSizeVertical(8),paddingHorizontal:pixelSizeHorizontal(8)}}>
+
+        <Back
+          onPress={navigation.goBack}
+          width={widthPixel(24)}
+          height={heightPixel(24)}
+          />
+          </View>
         <Text style={styles.Toptext}>Schedule</Text>
-        <Setting width={widthPixel(40)} height={heightPixel(40)}/>
+        <TouchableOpacity style={{ borderColor: COLORS.borderGrey,alignItems:'center',
+    borderWidth: 1,
+    borderRadius: 8,paddingVertical:pixelSizeVertical(8),paddingHorizontal:pixelSizeHorizontal(8)}}>
+
+        <Setting width={widthPixel(24)} height={heightPixel(24)} />
+        </TouchableOpacity>
       </View>
     <ScrollView
       showsVerticalScrollIndicator={false}
       contentContainerStyle={{
-        // paddingBottom: pixelSizeVertical(20),
       }}>
       <StatusBar
         translucent
@@ -64,7 +93,6 @@ const SchduleScreen = ({navigation, route}) => {
           calendarBackground: '#F5F5FF',
           textSectionTitleColor: '#101010',
           textSectionTitleDisabledColor: '#A7AFB2',
-          // selectedDayBackgroundColor: '#101010',
           selectedDayTextColor: '#ffffff',
           todayTextColor: 'white',
           dayTextColor: '#101010',
@@ -83,12 +111,15 @@ const SchduleScreen = ({navigation, route}) => {
           textDayHeaderFontWeight: '500',
           textDayFontSize: fontPixel(12),
           textMonthFontSize: fontPixel(14),
-          textDayHeaderFontSize: fontPixel(12)
+          textDayHeaderFontSize: fontPixel(12),
+          renderArrow: renderCustomArrow,
+        
+        
         }}
         style={{borderRadius:8}}
          markingType='custom'
          markedDates={{
-           [selected]:{selected: true, selectedColor: 'red',customStyles:{container:{backgroundColor:COLORS.lightBlue}}}
+           [selected]:{selected: true, selectedColor: 'red',customStyles:{container:{backgroundColor:COLORS.lightBlue,justifyContent:'center'}}}
            
           //  ,
           // [selected]: {selected: true, disableTouchEvent: true,}

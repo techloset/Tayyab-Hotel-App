@@ -5,7 +5,7 @@ import COLORS from '../../consts/Color';
 import Star from '../../img/homeImg/star.svg';
 import Slocation from '../../img/homeImg/Slocation.svg';
 import Scalender from '../../img/homeImg/Scalendar.svg';
-import { fontPixel, heightPixel, pixelSizeHorizontal, pixelSizeVertical } from '../../utils/ResponsiveStyle';
+import { fontPixel, heightPixel, pixelSizeHorizontal, pixelSizeVertical, widthPixel } from '../../utils/ResponsiveStyle';
 export default function Schedule() {
   return (
     <SafeAreaView>
@@ -24,12 +24,12 @@ export default function Schedule() {
                 style={styles.mainImg}
               />
             </View>
-            <View style={{flex:2, marginHorizontal: pixelSizeHorizontal(18),paddingTop:pixelSizeVertical(6), gap: 8}}>
+            <View style={{flex:2, marginHorizontal: pixelSizeHorizontal(18),paddingVertical:pixelSizeVertical(16), gap: 8}}>
               <View style={{flexDirection: 'row',gap:15}}>
                 <Text style={styles.dollersText}>Asteria hotel </Text>
                 <View style={{flexDirection: 'row'}}>
                 <Text style={styles.dollers}> $165,3 </Text>
-                <Text>/night</Text>
+                <Text style={{fontSize:fontPixel(14),color: COLORS.grey,alignSelf:'center'}}>/night</Text>
                 </View>
               </View>
               <View style={{flexDirection: 'row',gap:8}}>
@@ -54,12 +54,12 @@ export default function Schedule() {
                 style={styles.mainImg}
               />
             </View>
-            <View style={{flex:2, marginHorizontal: pixelSizeHorizontal(18),paddingTop:pixelSizeVertical(6), gap: 8}}>
+            <View style={{flex:2, marginHorizontal: pixelSizeHorizontal(18),paddingVertical:pixelSizeVertical(16), gap: 8}}>
               <View style={{flexDirection: 'row',gap:5}}>
                 <Text style={styles.dollersText}>Golden Pelece  </Text>
                 <View style={{flexDirection: 'row'}}>
                 <Text style={styles.dollers}> $175,3 </Text>
-                <Text>/night</Text>
+                <Text style={{fontSize:fontPixel(14),color: COLORS.grey,alignSelf:'center'}}>/night</Text>
                 </View>
               </View>
               <View style={{flexDirection: 'row',gap:8}}>
@@ -138,7 +138,7 @@ const styles = StyleSheet.create({
     shadowColor: '#000',
     marginHorizontal:pixelSizeHorizontal(24),
     marginVertical:pixelSizeVertical(16),
-    height:heightPixel(108)
+    height:102
   },
-  mainImg: {width:'100%', height:'100%', borderRadius:4},
+  mainImg: {width:84, height:84, borderRadius:4},
 });

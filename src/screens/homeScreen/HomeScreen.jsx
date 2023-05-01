@@ -18,6 +18,7 @@ import {InputIcon} from '../../components/inputIcon/InputIcon';
 import Location from '../../img/homeImg/location.svg';
 import ArrowDown from '../../img/homeImg/arrow-down.svg';
 import Notifi from '../../img/homeImg/Notification.svg';
+import Noti from '../../img/homeImg/noti.svg'
 import {
   widthPixel,
   heightPixel,
@@ -49,7 +50,12 @@ export default  HomeScreen=()=> {
               <ArrowDown />
             </View>
           </View>
-          <Notifi />
+          <View style={{ borderColor: COLORS.borderGrey,alignItems:'center',
+    borderWidth: 1,
+    borderRadius: 8,paddingVertical:pixelSizeVertical(10),paddingHorizontal:pixelSizeHorizontal(10)}}>
+          <Noti/>
+
+          </View>
         </View>
         <View style={{paddingHorizontal: pixelSizeHorizontal(24),
     // paddingVertical: pixelSizeVertical(24),
