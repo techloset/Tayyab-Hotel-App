@@ -12,7 +12,9 @@ const COLORS = {
     red:'#E74C3C',
     $color:'#4C4DDC',
     headerBG:'#E8EDFF',
-    homeBtnColor:'#F5F5FF'
+    homeBtnColor:'#F5F5FF',
+    bt: 'rgba(245, 245, 255, 0.9)'
+    
     
   };
   

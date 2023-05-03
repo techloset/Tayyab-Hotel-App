@@ -4,6 +4,7 @@ import { StyleSheet, View, Pressable, Text,} from 'react-native';
   import Coffee1 from '../../img/homeImg/coffee1.svg'
   import Star from '../../img/homeImg/star.svg'
 import { fontPixel, heightPixel, pixelSizeHorizontal, pixelSizeVertical, widthPixel } from '../../utils/ResponsiveStyle';
+import COLORS from '../../consts/Color';
 
   
   const DetailsButton = () => {
@@ -35,21 +36,21 @@ import { fontPixel, heightPixel, pixelSizeHorizontal, pixelSizeVertical, widthPi
   
   const styles = StyleSheet.create({
     PressableHouse: {
-      backgroundColor: '#F5F5F5',
+      backgroundColor: COLORS.bt,
       borderRadius: 8,
       flexDirection: 'row',
       paddingHorizontal: pixelSizeHorizontal(12),
       paddingVertical: pixelSizeVertical(9),
     },
     PressableShop: {
-      backgroundColor: '#F5F5F5',
+      backgroundColor: COLORS.bt,
       borderRadius: 8,
       flexDirection: 'row',
       paddingHorizontal: pixelSizeHorizontal(12),
       paddingVertical: pixelSizeVertical(9),
     },
     PressableCoffee: {
-      backgroundColor: '#F5F5F5',
+      backgroundColor: COLORS.bt,
       borderRadius: 8,
       flexDirection: 'row',
       paddingHorizontal: pixelSizeHorizontal(12),

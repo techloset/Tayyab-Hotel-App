@@ -47,10 +47,9 @@ export default function Destination() {
             <View
               style={{flexDirection: 'row', justifyContent: 'space-between'}}>
               <Text style={styles.dollersText}>Asteria hotel </Text>
-              <View style={{flexDirection: 'row', alignItems: 'center'}}>
+              <View style={{flexDirection: 'row', alignItems: 'center',flex:0}}>
                 <Text style={styles.dollers}> $165,3 </Text>
-                <Text style={{fontSize: fontPixel(14), color: COLORS.grey}}>
-                  /night
+                <Text style={{fontSize: fontPixel(14), color: COLORS.grey}}>/night
                 </Text>
               </View>
             </View>

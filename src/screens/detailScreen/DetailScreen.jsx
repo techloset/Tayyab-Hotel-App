@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   ImageBackground,
-  ScrollView,
   StatusBar,
   StyleSheet,
   Text,
@@ -26,8 +25,7 @@ import {Positions} from 'react-native-calendars/src/expandableCalendar';
 
 const DetailsScreen = ({navigation, route}) => {
   const items = route.params;
-  // console.log('items', items);
-  // const navigation = useNavigation();
+  
   return (
     <>
       <View style={styles.header}>
@@ -74,13 +72,15 @@ const DetailsScreen = ({navigation, route}) => {
         style={{
           marginHorizontal: pixelSizeHorizontal(24),
           flex: 0,
+    paddingTop: pixelSizeVertical(16),
+
         }}>
         <View style={styles.detailsText}>
           <Text style={styles.d1}>{items.hotel.name} </Text>
           <View style={{flexDirection: 'row', justifyContent: 'center'}}>
             <Text style={styles.d4}>
               ${items.hotel.price}{' '}
-              <Text style={{color: '#878787',fontSize:fontPixel(14),lineHeight:21}}> /night</Text>
+              <Text style={{color: '#878787',fontSize:fontPixel(14)}}> /night</Text>
             </Text>
           </View>
         </View>
@@ -184,7 +184,6 @@ const styles = StyleSheet.create({
     fontFamily: 'PlusJakartaSans-Bold',
   },
   detailsText: {
-    paddingTop: pixelSizeVertical(16),
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
@@ -222,7 +221,6 @@ const styles = StyleSheet.create({
     lineHeight: fontPixel(18),
     textAlign:'justify'
   },
-  // d8: {marginTop: pixelSizeVertical(16)},
   preview: {
     fontSize: fontPixel(14),
     fontFamily: 'PlusJakartaSans-Bold',
@@ -239,7 +237,8 @@ const styles = StyleSheet.create({
     color: COLORS.white,
     fontSize: fontPixel(18),
     fontFamily: 'PlusJakartaSans-Bold',
-    paddingVertical: pixelSizeVertical(16),
+    paddingTop: pixelSizeVertical(16),
+    height:53
   },
 });
 

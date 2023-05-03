@@ -2,12 +2,9 @@ import React from 'react';
 import {
   View,
   Text,
-  SafeAreaView,
   StyleSheet,
-  Image,
   FlatList,
   ScrollView,
-  Dimensions,
   StatusBar,
 } from 'react-native';
 import COLORS from '../../consts/Color';
@@ -17,7 +14,6 @@ import Destination from '../../components/popularDestination/Destination';
 import {InputIcon} from '../../components/inputIcon/InputIcon';
 import Location from '../../img/homeImg/location.svg';
 import ArrowDown from '../../img/homeImg/arrow-down.svg';
-import Notifi from '../../img/homeImg/Notification.svg';
 import Noti from '../../img/homeImg/noti.svg'
 import {
   widthPixel,
@@ -27,7 +23,6 @@ import {
   pixelSizeHorizontal,
 } from '../../utils/ResponsiveStyle.js';
 import { useState } from 'react';
-// const {height} = Dimensions.get('window');
 export default  HomeScreen=()=> {
   const [showItems, setShowItems] = useState(false);
   const handleSlideIconPress = () => {
@@ -58,7 +53,6 @@ export default  HomeScreen=()=> {
           </View>
         </View>
         <View style={{paddingHorizontal: pixelSizeHorizontal(24),
-    // paddingVertical: pixelSizeVertical(24),
     paddingTop:showItems? 32:24,
     paddingBottom:showItems? 32:24}}>
           <InputIcon showItems={showItems} setShowItems={setShowItems}  handleSlideIconPress={handleSlideIconPress} />
@@ -67,8 +61,7 @@ export default  HomeScreen=()=> {
       <ScrollView>
 
         {/* Cards Item Landing form Cards components */}
-        {/* <View> */}
-        {/* </View> */}
+       
       <View style={{flex: 1}}>
      
           <View style={{}}>
@@ -99,26 +92,11 @@ export default  HomeScreen=()=> {
       </ScrollView>
 
         </View>
-            {/* Popular Destination Cards */}
 
     </>
   );
 }
-// export default function Home() {
-//   return (
-//     <>
-       
-//         {/* <View style={{flex: 1}}>
-//           <HomeScreen />
-//         </View> */}
-     
-//         <ScrollView>
-//           <HomeScreen />
-//         </ScrollView>
-      
-//     </>
-//   );
-// }
+
 
 const styles = StyleSheet.create({
   header: {
@@ -147,7 +125,6 @@ const styles = StyleSheet.create({
 
   container1: {
     paddingHorizontal: pixelSizeHorizontal(24),
-    // paddingVertical: pixelSizeVertical(24),
     paddingTop:32,
     paddingBottom:24
     
