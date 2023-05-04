@@ -20,54 +20,27 @@ import {widthPixel,
   pixelSizeVertical,
   pixelSizeHorizontal,} from '../../utils/ResponsiveStyle.js'
 const SearchButton = ({navigation, setShowItems }) => {
-//   const navigation = useNavigation();
-  // const [input, setInput] = useState(true);
-//   function hello() {
-//     setshowInput(!showInput);
+
 //   }
 
   return (
     <>
-      {/* {!showInput ? (
-        <View style={{flexDirection: 'row', justifyContent: 'space-around'}}>
-          <Pressable style={styles.PressableHouse}>
-            <House />
-            <Text style={{paddingLeft: 8, color: 'white'}}>Hotel</Text>
-          </Pressable>
 
-          <Pressable style={styles.PressableShop}>
-            <Shop />
-            <Text style={{paddingLeft: 8, color: '#878787'}} onPress={hello}>
-              Market
-            </Text>
-          </Pressable>
-          <Pressable style={styles.PressableCoffee}>
-            <Coffee />
-            <Text style={{paddingLeft: 8, color: '#878787'}}>Coffee</Text>
-          </Pressable>
-        </View>
-      ) : (
-        <View>
-          {' '}
-          <Button title="hello" />{' '}
-        </View>
-      )} */}
-      {/* {input? */}
-       <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+       <View style={{flexDirection: 'row', justifyContent: 'space-between',gap:12}}>
           <Pressable style={styles.PressableHouse}>
             <House width={widthPixel(20)} height={heightPixel(20)}/>
-            <Text style={{paddingLeft: pixelSizeHorizontal(8), color: 'white',fontSize:fontPixel(14)}}>Hotel</Text>
+            <Text style={{color: 'white',fontSize:fontPixel(14)}}>Hotel</Text>
           </Pressable>
 
           <Pressable style={styles.PressableShop}>
             <Shop width={widthPixel(20)} height={heightPixel(20)}/>
-            <Pressable onPress={()=>setShowItems(false)} style={{paddingLeft: pixelSizeHorizontal(8)}} >
+            <Pressable onPress={()=>setShowItems(false)} style={{}} >
               <Text style={{fontSize:fontPixel(14),color: COLORS.grey,}}> Market</Text> 
             </Pressable>
           </Pressable>
           <Pressable style={styles.PressableCoffee}>
             <Coffee width={widthPixel(20)} height={heightPixel(20)}/>
-            <Pressable onPress={()=>setShowItems(false)} style={{paddingLeft: pixelSizeHorizontal(8)}}>
+            <Pressable onPress={()=>setShowItems(false)} style={{}}>
               <Text style={{fontSize:fontPixel(14),color: COLORS.grey,}}>Coffee</Text>
               </Pressable>
           </Pressable>
@@ -85,6 +58,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     flexDirection: 'row',
     alignItems:'center',
+    gap:8,
 
     paddingHorizontal: pixelSizeHorizontal(12),
     paddingVertical: pixelSizeVertical(8),
@@ -94,7 +68,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     flexDirection: 'row',
     alignItems:'center',
-
+    gap:8,
     paddingHorizontal: pixelSizeHorizontal(12),
     paddingVertical: pixelSizeVertical(8),
   },
@@ -102,6 +76,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#F5F5F5',
     borderRadius: 8,
     flexDirection: 'row',
+    gap:8,
     alignItems:'center',
     paddingHorizontal: pixelSizeHorizontal(12),
     paddingVertical: pixelSizeVertical(8),

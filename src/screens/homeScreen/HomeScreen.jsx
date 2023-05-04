@@ -14,7 +14,7 @@ import Destination from '../../components/popularDestination/Destination';
 import {InputIcon} from '../../components/inputIcon/InputIcon';
 import Location from '../../img/homeImg/location.svg';
 import ArrowDown from '../../img/homeImg/arrow-down.svg';
-import Noti from '../../img/homeImg/noti.svg'
+import Noti from '../../img/homeImg/noti.svg';
 import {
   widthPixel,
   heightPixel,
@@ -22,81 +22,93 @@ import {
   pixelSizeVertical,
   pixelSizeHorizontal,
 } from '../../utils/ResponsiveStyle.js';
-import { useState } from 'react';
-export default  HomeScreen=()=> {
+import {useState} from 'react';
+export default HomeScreen = () => {
   const [showItems, setShowItems] = useState(false);
   const handleSlideIconPress = () => {
     setShowItems(!showItems);
   };
   return (
     <>
-    <StatusBar  translucent
+      <StatusBar
+        translucent
         backgroundColor={'transparent'}
-        barStyle={'dark-content'}/>
-        <View style={{flex:1}}>
-
-      <View style={{flex: 0}}>
-        <View style={styles.header}>
-          <View style={styles.headLocation}>
-            <Text style={styles.cuurentLocation}>Current location</Text>
-            <View style={styles.Location1}>
-              <Location />
-              <Text style={styles.innerText}>Wallace, Australia</Text>
-              <ArrowDown />
-            </View>
-          </View>
-          <View style={{ borderColor: COLORS.borderGrey,alignItems:'center',
-    borderWidth: 1,
-    borderRadius: 8,paddingVertical:pixelSizeVertical(8),paddingHorizontal:pixelSizeHorizontal(8)}}>
-          <Noti width={widthPixel(24)} height={heightPixel(24)}/>
-
-          </View>
-        </View>
-        <View style={{paddingHorizontal: pixelSizeHorizontal(24),
-    paddingTop:showItems? 32:24,
-    paddingBottom:showItems? 32:24}}>
-          <InputIcon showItems={showItems} setShowItems={setShowItems}  handleSlideIconPress={handleSlideIconPress} />
-        </View>
-      </View>
-      <ScrollView>
-
-        {/* Cards Item Landing form Cards components */}
-       
+        barStyle={'dark-content'}
+      />
       <View style={{flex: 1}}>
-     
-          <View style={{}}>
-            <View style={styles.Nearby}>
-              <Text style={styles.NearbyLocation}>Nearby your location</Text>
-              <Text style={styles.see}>See all</Text>
+        <View style={{flex: 0}}>
+          <View style={styles.header}>
+            <View style={styles.headLocation}>
+              <Text style={styles.cuurentLocation}>Current location</Text>
+              <View style={styles.Location1}>
+                <Location style={{marginTop: 5}} />
+                <Text style={styles.innerText}>Wallace, Australia</Text>
+                <ArrowDown style={{marginTop: 5}} />
+              </View>
             </View>
-            <FlatList
-              horizontal
-              data={hotels}
-              contentContainerStyle={{
-                paddingTop: pixelSizeVertical(16),
-                paddingBottom: pixelSizeVertical(24),
-                paddingLeft: pixelSizeHorizontal(20),
-              }}
-              showsHorizontalScrollIndicator={false}
-              renderItem={({item, index}) => (
-                <HotelCard hotel={item} index={index} showItems={showItems} setShowItems={setShowItems}  handleSlideIconPress={handleSlideIconPress}/>
-              )}
+            <View
+              style={{
+                borderColor: COLORS.borderGrey,
+                alignItems: 'center',
+                borderWidth: 1,
+                borderRadius: 8,
+                paddingVertical: pixelSizeVertical(8),
+                paddingHorizontal: pixelSizeHorizontal(8),
+              }}>
+              <Noti width={widthPixel(24)} height={heightPixel(24)} />
+            </View>
+          </View>
+          <View
+            style={{
+              marginHorizontal: pixelSizeHorizontal(20),
+              paddingTop: showItems ? 32 : 24,
+              paddingBottom: showItems ? 32 : 24,
+            }}>
+            <InputIcon
+              showItems={showItems}
+              setShowItems={setShowItems}
+              handleSlideIconPress={handleSlideIconPress}
             />
           </View>
-        
-    
-      </View>
-        <View style={{flex: 0, justifyContent: 'flex-start'}}>
+        </View>
+        <ScrollView>
+          {/* Cards Item Landing form Cards components */}
+
+          <View style={{flex: 1}}>
+            <View style={{}}>
+              <View style={styles.Nearby}>
+                <Text style={styles.NearbyLocation}>Nearby your location</Text>
+                <Text style={styles.see}>See all</Text>
+              </View>
+              <FlatList
+                horizontal
+                data={hotels}
+                contentContainerStyle={{
+                  paddingTop: pixelSizeVertical(16),
+                  paddingBottom: pixelSizeVertical(24),
+                  paddingLeft: pixelSizeHorizontal(20),
+                }}
+                showsHorizontalScrollIndicator={false}
+                renderItem={({item, index}) => (
+                  <HotelCard
+                    hotel={item}
+                    index={index}
+                    showItems={showItems}
+                    setShowItems={setShowItems}
+                    handleSlideIconPress={handleSlideIconPress}
+                  />
+                )}
+              />
+            </View>
+          </View>
+          <View style={{flex: 0, justifyContent: 'flex-start'}}>
             <Destination />
           </View>
-      </ScrollView>
-
-        </View>
-
+        </ScrollView>
+      </View>
     </>
   );
-}
-
+};
 
 const styles = StyleSheet.create({
   header: {
@@ -109,6 +121,7 @@ const styles = StyleSheet.create({
     flex: 0,
     flexDirection: 'row',
     paddingTop: pixelSizeVertical(4),
+    alignItems: 'center',
   },
   cuurentLocation: {
     color: COLORS.grey,
@@ -125,9 +138,8 @@ const styles = StyleSheet.create({
 
   container1: {
     paddingHorizontal: pixelSizeHorizontal(24),
-    paddingTop:32,
-    paddingBottom:24
-    
+    paddingTop: 32,
+    paddingBottom: 24,
   },
 
   Nearby: {

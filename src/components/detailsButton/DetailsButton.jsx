@@ -1,4 +1,4 @@
-import { StyleSheet, View, Pressable, Text,} from 'react-native';
+import { StyleSheet, View,  Text, TouchableOpacity,} from 'react-native';
   import React from 'react';
   import Wifi from '../../img/homeImg/wifi.svg'
   import Coffee1 from '../../img/homeImg/coffee1.svg'
@@ -13,20 +13,20 @@ import COLORS from '../../consts/Color';
       <>
     
          <View style={{flexDirection: 'row',gap:8}}>
-            <Pressable style={styles.PressableHouse}>
+            <TouchableOpacity style={styles.PressableHouse}>
               <Wifi width={widthPixel(20)} height={heightPixel(20)}/>
               <Text style={styles.text}>Free Wifi  </Text>
-            </Pressable>
-            <Pressable style={styles.PressableShop}>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.PressableShop}>
               <Coffee1 width={widthPixel(20)} height={heightPixel(20)}/>
               <Text style={styles.text} >
               Free Breakfast
               </Text>
-            </Pressable>
-            <Pressable style={styles.PressableCoffee}>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.PressableCoffee}>
               <Star width={widthPixel(20)} height={heightPixel(20)}/>
               <Text style={styles.text}>5.0 </Text>
-            </Pressable>
+            </TouchableOpacity>
           </View>
       </>
     );

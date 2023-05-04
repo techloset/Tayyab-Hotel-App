@@ -54,7 +54,7 @@ const DetailsScreen = ({navigation, route}) => {
       />
       <View
         style={{
-          flex: 0.58,
+          flex: 0.48,
           marginHorizontal: pixelSizeHorizontal(24),
         }}>
         <View>
@@ -71,8 +71,8 @@ const DetailsScreen = ({navigation, route}) => {
       <View
         style={{
           marginHorizontal: pixelSizeHorizontal(24),
-          flex: 0,
-    paddingTop: pixelSizeVertical(16),
+          flex: 0.23,
+    marginTop: pixelSizeVertical(16),
 
         }}>
         <View style={styles.detailsText}>
@@ -150,6 +150,8 @@ const styles = StyleSheet.create({
     marginTop: pixelSizeVertical(100),
     backgroundColor: COLORS.lightBlue,
     borderRadius: 12,
+    height:53,
+
   },
 
   priceTag: {
@@ -236,9 +238,10 @@ const styles = StyleSheet.create({
   BtnColor: {
     color: COLORS.white,
     fontSize: fontPixel(18),
+    lineHeight: fontPixel(18),
     fontFamily: 'PlusJakartaSans-Bold',
-    paddingTop: pixelSizeVertical(16),
-    height:53
+    // lineHeight:21,
+    
   },
 });
 

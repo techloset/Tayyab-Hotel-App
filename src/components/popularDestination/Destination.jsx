@@ -55,11 +55,11 @@ export default function Destination() {
             </View>
             <Text style={styles.location}>Wilora NT 0872, Australia</Text>
             <View style={{flexDirection: 'row', alignItems: 'center',gap:6}}>
-              <Star width={widthPixel(16)} height={heightPixel(16)} />
-              <Star width={widthPixel(16)} height={heightPixel(16)} />
-              <Star width={widthPixel(16)} height={heightPixel(16)} />
-              <Star width={widthPixel(16)} height={heightPixel(16)} />
-              <Star width={widthPixel(16)} height={heightPixel(16)} />
+              <Star width={widthPixel(20)} height={heightPixel(20)} />
+              <Star width={widthPixel(20)} height={heightPixel(20)} />
+              <Star width={widthPixel(20)} height={heightPixel(20)} />
+              <Star width={widthPixel(20)} height={heightPixel(20)} />
+              <Star width={widthPixel(20)} height={heightPixel(20)} />
 
               <Text style={styles.number}>5.0</Text>
             </View>
@@ -102,8 +102,9 @@ const styles = StyleSheet.create({
     fontSize: fontPixel(12),
     fontFamily: 'PlusJakartaSans-Bold',
     alignSelf: 'baseline',
-    paddingLeft: 4,
     fontFamily: 'PlusJakartaSans-Bold',
+    width:widthPixel(21),
+    height:heightPixel(18)
   },
   main: {
     flexDirection: 'row',

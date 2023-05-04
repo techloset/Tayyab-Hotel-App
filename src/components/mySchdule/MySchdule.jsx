@@ -192,7 +192,7 @@ const styles = StyleSheet.create({
     shadowColor: '#000',
     marginHorizontal:pixelSizeHorizontal(24),
     marginVertical:pixelSizeVertical(16),
-    height:108
+    minHeight:108
   },
   mainImg: {width:"100%", height:84, borderRadius:4,resizeMode: 'contain',marginVertical:12}
 });

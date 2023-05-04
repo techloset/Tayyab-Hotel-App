@@ -1,13 +1,3 @@
-// import { View, Text } from 'react-native'
-// import React from 'react'
-
-// export default function HotelCard() {
-//   return (
-//     <View>
-//       <Text>HotelCard</Text>
-//     </View>
-//   )
-// }
 
 import React from 'react';
 import {
@@ -21,7 +11,7 @@ import {Image} from 'react-native';
 import COLORS from '../../consts/Color';
 import Favorite from '../../img/homeImg/favorite.svg';
 import Star from '../../img/homeImg/star.svg';
-import HeartIcon from '../../img/homeImg/IconHeart.svg'
+import HeartIcon from '../../img/homeImg/IconHeart.svg';
 import {useNavigation} from '@react-navigation/native';
 import {
   widthPixel,
@@ -33,7 +23,13 @@ import {
 
 const {width} = Dimensions.get('window');
 const cardWidth = width / 1.4;
-const Card = ({hotel, index,showItems,setShowItems,handleSlideIconPress}) => {
+const Card = ({
+  hotel,
+  index,
+  showItems,
+  setShowItems,
+  handleSlideIconPress,
+}) => {
   const navigation = useNavigation();
   return (
     <TouchableOpacity
@@ -41,29 +37,29 @@ const Card = ({hotel, index,showItems,setShowItems,handleSlideIconPress}) => {
       activeOpacity={1}
       onPress={() => {
         navigation.navigate('Detail', {hotel});
-      }}
-      >
+      }}>
       <View style={styles.priceTag}>
-       {showItems? <HeartIcon/> :<Favorite />
-       } 
+        {showItems ? <HeartIcon /> : <Favorite />}
       </View>
       <View>
         <Image source={hotel.image} style={styles.mainimg} />
-        
       </View>
       <View style={styles.cardDetails}>
         <View style={styles.maincard}>
           <Text style={styles.hotelname}>{hotel.name}</Text>
 
           <View style={styles.starwala}>
-            <Star width={widthPixel(16)} height={heightPixel(16)} />
+            <Star width={widthPixel(20)} height={heightPixel(20)} />
             <Text style={styles.number}>5.0</Text>
           </View>
         </View>
         <Text style={styles.hotellocation}>{hotel.location}</Text>
         <View style={styles.mainprice}>
           <Text style={styles.cardprice}>${hotel.price}</Text>
-          <Text style={{fontSize:fontPixel(14),color: COLORS.grey,}}> /night</Text>
+          <Text style={{fontSize: fontPixel(14), color: COLORS.grey}}>
+            {' '}
+            /night
+          </Text>
         </View>
       </View>
     </TouchableOpacity>
@@ -94,13 +90,10 @@ const styles = StyleSheet.create({
   number: {
     color: COLORS.black,
     fontSize: fontPixel(12),
-    // lineHeight: 18,
+
     fontFamily: 'PlusJakartaSans-Bold',
-    // alignSelf: 'baseline',
-    // paddingLeft: 5,
   },
   mainimg: {
-    // flex: 2,
     width: '100%',
     height: heightPixel(209),
     borderTopLeftRadius: 12,
@@ -123,13 +116,17 @@ const styles = StyleSheet.create({
     fontFamily: 'PlusJakartaSans-Medium',
     marginTop: pixelSizeVertical(8),
   },
-  mainprice: {flexDirection: 'row', marginTop: pixelSizeVertical(8),alignItems:'center'},
+  mainprice: {
+    flexDirection: 'row',
+    marginTop: pixelSizeVertical(8),
+    alignItems: 'center',
+  },
   cardprice: {
     color: COLORS.$color,
     fontSize: fontPixel(14),
     fontFamily: 'PlusJakartaSans-Bold',
   },
-  starwala: {flexDirection: 'row', alignItems: 'center',gap:9},
+  starwala: {flexDirection: 'row', alignItems: 'center', gap: 9},
 });
 
 export default Card;
