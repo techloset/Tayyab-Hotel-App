@@ -4,7 +4,6 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Home from './src/screens/homeScreen/HomeScreen';
-import Detail from './src/screens/detailScreen/DetailScreen';
 import Schdule from './src/screens/schduleScreen/SchduleScreen';
 import HomeTab from './src/components/homeTabBtn/HomeBtn';
 import BookMark from './src/img/homeImg/bookmark.svg';
@@ -15,9 +14,7 @@ import AccountScreen from './src/screens/accountScreen/AccountScreen';
 import ScheduleBtn from './src/components/scheduleTabBtn/ScheduleBtn';
 import House from './src/img/homeImg/Appointment.svg'
 import {
-  widthPixel,
   heightPixel,
-  fontPixel,
   pixelSizeVertical,
   pixelSizeHorizontal,
 } from './src/utils/ResponsiveStyle';
@@ -60,10 +57,7 @@ const HomeTabs = () => {
           name="Detailjkj"
           component={AccountScreen}
           options={{
-            // tabBarItemStyle:{display:'none'},
-            // tabBarStyle: {display: 'none'},
             tabBarLabel: '',
-
             tabBarIcon: ({color, size}) => <BookMark />,
           }}
         />
@@ -77,9 +71,7 @@ const HomeTabs = () => {
           }}
         />
       </Tab.Navigator>
-      {/* <View style={{paddingHorizontal: 116, position: 'absolute', bottom: 5}}>
-        <Indicator />
-      </View> */}
+   
     </>
   );
 };
@@ -92,7 +84,6 @@ const App = () => {
         screenOptions={{headerShown: false}}>
         <Stack.Screen name="HomeTabs" component={HomeTabs} />
         <Stack.Screen name="Detail" component={DetailScreen} />
-        {/* <Stack.Screen name='account' component={AccountScreen}/> */}
       </Stack.Navigator>
     </NavigationContainer>
   );

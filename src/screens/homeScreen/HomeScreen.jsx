@@ -35,7 +35,7 @@ export default HomeScreen = () => {
         backgroundColor={'transparent'}
         barStyle={'dark-content'}
       />
-      <View style={{flex: 1}}>
+      <View style={{flex: 1,backgroundColor:'white'}}>
         <View style={{flex: 0}}>
           <View style={styles.header}>
             <View style={styles.headLocation}>

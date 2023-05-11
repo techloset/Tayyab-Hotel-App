@@ -124,7 +124,7 @@ const styles = StyleSheet.create({
   maindest: {
     backgroundColor: 'white',
     marginVertical: pixelSizeVertical(16),
-    marginHorizontal: pixelSizeHorizontal(16),
+    marginHorizontal: pixelSizeHorizontal(24),
     borderRadius: 12,
     elevation: 5,
     shadowColor: '#000',

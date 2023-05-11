@@ -25,26 +25,36 @@ import {Positions} from 'react-native-calendars/src/expandableCalendar';
 
 const DetailsScreen = ({navigation, route}) => {
   const items = route.params;
-  
+
   return (
-    <>
+    <View style={{flex:1,backgroundColor:'white'}}>
       <View style={styles.header}>
-        <View  style={{ borderColor: COLORS.borderGrey,alignItems:'center',
-    borderWidth: 1,
-    borderRadius: 8,paddingVertical:pixelSizeVertical(8),paddingHorizontal:pixelSizeHorizontal(8)}}>
-
-        <Back
-          onPress={navigation.goBack}
-          width={widthPixel(24)}
-          height={heightPixel(24)}
+        <View
+          style={{
+            borderColor: COLORS.borderGrey,
+            alignItems: 'center',
+            borderWidth: 1,
+            borderRadius: 8,
+            paddingVertical: pixelSizeVertical(8),
+            paddingHorizontal: pixelSizeHorizontal(8),
+          }}>
+          <Back
+            onPress={navigation.goBack}
+            width={widthPixel(24)}
+            height={heightPixel(24)}
           />
-          </View>
+        </View>
         <Text style={styles.Toptext}>Detail</Text>
-        <TouchableOpacity style={{ borderColor: COLORS.borderGrey,alignItems:'center',
-    borderWidth: 1,
-    borderRadius: 8,paddingVertical:pixelSizeVertical(8),paddingHorizontal:pixelSizeHorizontal(8)}}>
-
-        <Menu width={widthPixel(24)} height={heightPixel(24)} />
+        <TouchableOpacity
+          style={{
+            borderColor: COLORS.borderGrey,
+            alignItems: 'center',
+            borderWidth: 1,
+            borderRadius: 8,
+            paddingVertical: pixelSizeVertical(8),
+            paddingHorizontal: pixelSizeHorizontal(8),
+          }}>
+          <Menu width={widthPixel(24)} height={heightPixel(24)} />
         </TouchableOpacity>
       </View>
       <StatusBar
@@ -72,15 +82,17 @@ const DetailsScreen = ({navigation, route}) => {
         style={{
           marginHorizontal: pixelSizeHorizontal(24),
           flex: 0.23,
-    marginTop: pixelSizeVertical(16),
-
+          marginTop: pixelSizeVertical(16),
         }}>
         <View style={styles.detailsText}>
           <Text style={styles.d1}>{items.hotel.name} </Text>
           <View style={{flexDirection: 'row', justifyContent: 'center'}}>
             <Text style={styles.d4}>
               ${items.hotel.price}{' '}
-              <Text style={{color: '#878787',fontSize:fontPixel(14)}}> /night</Text>
+              <Text style={{color: '#878787', fontSize: fontPixel(14)}}>
+                {' '}
+                /night
+              </Text>
             </Text>
           </View>
         </View>
@@ -108,27 +120,38 @@ const DetailsScreen = ({navigation, route}) => {
         style={{
           flex: 0.29,
           marginHorizontal: pixelSizeHorizontal(24),
-          marginTop:pixelSizeVertical(16)
+          marginTop: pixelSizeVertical(16),
         }}>
         <View style={styles.d8}>
           <Text style={styles.preview}>Preview</Text>
           <View style={styles.previewImg}>
             <Image
               source={require('../../img/homeImg/preview1.png')}
-              style={{width: widthPixel(98), height: heightPixel(82),borderRadius:5}}
+              style={{
+                width: widthPixel(98),
+                height: heightPixel(82),
+                borderRadius: 5,
+              }}
             />
 
             <Image
               source={require('../../img/homeImg/preview2.png')}
-              style={{width: widthPixel(98), height: heightPixel(82),borderRadius:5}}
+              style={{
+                width: widthPixel(98),
+                height: heightPixel(82),
+                borderRadius: 5,
+              }}
             />
             <Image
               source={require('../../img/homeImg/preview3.png')}
-              style={{width: widthPixel(98), height: heightPixel(82),borderRadius:5}}
+              style={{
+                width: widthPixel(98),
+                height: heightPixel(82),
+                borderRadius: 5,
+              }}
             />
           </View>
         </View>
-        
 
         <View style={styles.btn}>
           <TouchableOpacity
@@ -139,7 +162,7 @@ const DetailsScreen = ({navigation, route}) => {
           </TouchableOpacity>
         </View>
       </View>
-    </>
+    </View>
   );
 };
 
@@ -150,8 +173,7 @@ const styles = StyleSheet.create({
     marginTop: pixelSizeVertical(100),
     backgroundColor: COLORS.lightBlue,
     borderRadius: 12,
-    height:53,
-
+    height: 53,
   },
 
   priceTag: {
@@ -171,7 +193,7 @@ const styles = StyleSheet.create({
     height: heightPixel(250),
     overflow: 'hidden',
     borderRadius: 8,
-    width:widthPixel(327)
+    width: widthPixel(327),
   },
   header: {
     marginTop: pixelSizeVertical(40),
@@ -221,7 +243,7 @@ const styles = StyleSheet.create({
     color: COLORS.grey,
     paddingTop: pixelSizeVertical(12),
     lineHeight: fontPixel(18),
-    textAlign:'justify'
+    textAlign: 'justify',
   },
   preview: {
     fontSize: fontPixel(14),
@@ -241,7 +263,6 @@ const styles = StyleSheet.create({
     lineHeight: fontPixel(18),
     fontFamily: 'PlusJakartaSans-Bold',
     // lineHeight:21,
-    
   },
 });
 

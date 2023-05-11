@@ -25,10 +25,8 @@ const {width} = Dimensions.get('window');
 const cardWidth = width / 1.4;
 const Card = ({
   hotel,
-  index,
   showItems,
-  setShowItems,
-  handleSlideIconPress,
+ 
 }) => {
   const navigation = useNavigation();
   return (
@@ -69,7 +67,7 @@ const Card = ({
 const styles = StyleSheet.create({
   cards: {
     width: cardWidth,
-    elevation: 15,
+    elevation: 5,
     backgroundColor: COLORS.white,
     marginRight: pixelSizeHorizontal(16),
     borderRadius: 12,
